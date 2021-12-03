@@ -1,6 +1,6 @@
 #WOAクラスの定義
 
-#getArray()とgetScore()を探す 　あとproblem
+#getArray()とgetScore()を探す あとproblem
 
 
 import math
@@ -10,7 +10,7 @@ import numpy as np
 
 class   WOA():
     def __init__(self,
-                whale_max,              #クジラの頭数
+                whale_max=10,              #クジラの頭数
                 a_decrease=0.001,       #変数aの減少値
                 logarithmic_spiral=1,   #対数螺旋の係数
     ):
@@ -73,9 +73,8 @@ class   WOA():
             whale.setArray(pos)
             if self.best_whale.getScore() < whale.getScore():
                 self.best_whale = whale.copy()
-                print(self.best_whale)
 
-
+        print(self.best_whale)
         #毎処理の最後に，aを減少させる
         self._a -= self.a_decrease
         if self._a < 0:
